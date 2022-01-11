@@ -21,6 +21,15 @@ public class CityList {
         }
         cities.add(city);
     }
+    public void delete(City city){
+        if(cities.contains(city)) {
+            cities.remove(city);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
+
+    }
 
     /**
      * This returns a sorted list of cities
@@ -31,6 +40,9 @@ public class CityList {
         List<City> list = cities;
         Collections.sort(list);
         return list;
+    }
+    public int countCities() {
+        return cities.size();
     }
 
 }
